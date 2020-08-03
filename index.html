@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link href="/file/pic/logo.png" rel="icon" type="image/png">
     <title>欢迎访问！ - WHY工作室 官网</title>
     <meta charset="utf-8">
     <meta content="WHY工作室官网,WHY工作室,写代码的工作室,WHY教育,编程教育行业新品牌" name="description">
+    <meta name="description" content="WHY工作室是致力于提供好用的工具、好玩的游戏和优质的教育的一家互联网+工作室，其员工采用线上办公制度，不打卡，不考勤，让员工享受最自由的办公体验，同时，也不受COVID-19的影响！">
 <style type="text/css">
 a{
 text-decoration: none;
@@ -90,6 +92,74 @@ h1{
     font-size: 16px;
 }
 </style>
+<style>
+            #colourfulButten * {
+                margin: 0;
+                padding: 0;
+            }
+ 
+            #colourfulButten a {
+                text-decoration: none;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                /* 按钮居中 */
+                transform: translate(-50%, -50%);
+                font-size: 24px;
+                /* 线性渐变 */
+                background: linear-gradient(90deg, #00aaff, #ffaaff, #ffff00, #00aaff);
+                /* 放大背景 */
+                background-size: 400%;
+                width: 400px;
+                height: 100px;
+                line-height: 100px;
+                text-align: center;
+                color: #fff;
+                /* 内容始终大写 */
+                text-transform: uppercase;
+                border-radius: 50px;
+                /* 设置层级关系，仅能在定位元素上奏效 */
+                z-index: 1;
+            }
+ 
+            #colourfulButten a::before {
+                content: "";
+                position: absolute;
+                left: -5px;
+                right: -5px;
+                top: -5px;
+                bottom: -5px;
+                /* 线性渐变 */
+                background: linear-gradient(90deg, #00aaff, #ffaaff, #ffff00, #00aaff);
+                /* 放大背景 */
+                background-size: 400%;
+                border-radius: 50px;
+                /* 设置滤镜 */
+                filter: blur(10px);
+                /* 设置层级关系，仅能在定位元素上奏效 */
+                z-index: -1;
+ 
+            }
+ 
+            #colourfulButten a:hover::before {
+                /* 鼠标停留开始动画，无限循环 */
+                animation: sum 8s infinite;
+            }
+ 
+ 
+            #colourfulButten a:hover {
+                /* 鼠标停留开始动画，无限循环 */
+                animation: sum 8s infinite;
+            }
+ 
+            @keyframes sum {
+ 
+                /* 更改背景图片位置 Y轴不变 */
+                100% {
+                    background-position: -400% 0;
+                }
+        </style>
+<script type="text/javascript" async charset="utf-8" src="https://v1.cnzz.com/z_stat.php?id=1279051471&web_id=1279051471"></script>
 </head>
   <body style="background: #f0f0f0;">
     <section>
@@ -105,11 +175,11 @@ h1{
                 </div>
             <p>欢迎来到WHY工作室的新官网！这个网站将不再由凡科建站托管，WHY工作室将把它交给GitHub，而现在，你已经看到了GitHub的服务器向你发送的页面了！</p>
             <p>由于一切都要重新开始，所以网站还在设计中，敬请谅解！不过，在新网站完工后，将不再拥有每月只能有3000的访问量限制了！</p>
-            <p>如果您需要帮助，您可以对官方QQ留言<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1594958896&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1594958896:51" alt="点击这里给我发消息" title="点击这里给我发消息"/></a>，或者您可以<a href="/wkcwx/index.html">加室长的企业微信</a>！</p>
+            <p>如果您需要帮助，您可以对官方QQ留言<a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=1594958896&site=qq&menu=yes"><img border="0" src="http://wpa.qq.com/pa?p=2:1594958896:51" alt="WHY工作室官方QQ账号，由于非24小时在线，回复可能有延迟！" title="WHY工作室官方QQ账号，由于非24小时在线，回复可能有延迟！"/></a>，或者您可以<a href="/wkcwx/index.html">加室长的企业微信</a>！</p>
             <p>现在，您可以尝试使用：</p>
-            <p align="center"><a target="_blank" href="/bulletinBoard/" class="act-btn tfl-setting">
+            <p align="center"><a id="colourfulButten" target="_blank" href="/bulletinBoard/" class="act-btn tfl-setting">
               <span>公告板</span>
-            </a><a>&nbsp;&nbsp;</a><a target="_blank" href="/donateToUs/" class="act-btn tfl-setting">
+            </a><a>&nbsp;&nbsp;</a><a id="colourfulButten" target="_blank" href="/donateToUs/" class="act-btn tfl-setting">
               <span>捐助我们</span>
             </a></p>
             <h3>&nbsp;</h3>
