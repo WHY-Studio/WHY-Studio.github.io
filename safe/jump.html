@@ -184,6 +184,8 @@ border-width: 7px;
 </div>
 <div class="actions">
 <a class="button" onclick="allowJump()">继续访问</a>
+<a class="button" onclick="allowJumpNewTab()">在新标签页中访问</a>
+<a class="button" onclick="allowJumpWindow()">在弹窗中访问</a>
 </div>
 
 </div>
@@ -256,6 +258,48 @@ linkEl.attachEvent('onclick', selectLink);
             if(key[i] == "url"){
                 //alert(value[i]);
                 window.location.href = value[i];
+            }
+                //alert(key[i]+"="+value[i]);
+            }
+        }
+    }
+    function allowJumpWindow() {
+        var url=window.location.search;
+        if(url.indexOf("?")!=-1)
+        {
+            var str = url.substr(1)
+            strs = str.split("&");
+            var key=new Array(strs.length);
+            var value=new Array(strs.length);
+            for(i=0;i<strs.length;i++){
+                key[i]=strs[i].split("=")[0]
+                value[i]=unescape(strs[i].split("=")[1]);
+            if(key[i] == "url"){
+                //alert(value[i]);
+                // window.location.href = value[i];
+                window.open(value[i],'','width=800,height=500,resizable=yes');
+                // window.open(value[i],'','');
+            }
+                //alert(key[i]+"="+value[i]);
+            }
+        }
+    }
+    function allowJumpNewTab() {
+        var url=window.location.search;
+        if(url.indexOf("?")!=-1)
+        {
+            var str = url.substr(1)
+            strs = str.split("&");
+            var key=new Array(strs.length);
+            var value=new Array(strs.length);
+            for(i=0;i<strs.length;i++){
+                key[i]=strs[i].split("=")[0]
+                value[i]=unescape(strs[i].split("=")[1]);
+            if(key[i] == "url"){
+                //alert(value[i]);
+                // window.location.href = value[i];
+                // window.open(value[i],'','width=300,height=300,resizable=yes');
+                window.open(value[i],'','');
             }
                 //alert(key[i]+"="+value[i]);
             }
