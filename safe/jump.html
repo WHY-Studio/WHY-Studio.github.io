@@ -225,7 +225,7 @@ linkEl.attachEvent('onclick', selectLink);
 -->
 
 <script>
-    var url=window.location.search;
+    var url=decodeURIComponent(window.location.search);
     if(url.indexOf("?")!=-1)
     {
         var str = url.substr(1)
@@ -233,11 +233,11 @@ linkEl.attachEvent('onclick', selectLink);
         var key=new Array(strs.length);
         var value=new Array(strs.length);
         for(i=0;i<strs.length;i++){
-            key[i]=strs[i].split("=")[0]
-            value[i]=unescape(strs[i].split("=")[1]);
+            key[i]=decodeURIComponent(strs[i].split("=")[0]);
+            value[i]=decodeURIComponent(unescape(strs[i].split("=")[1]));
         if(key[i] == "url"){
             //alert(value[i]);
-            document.getElementById("link").innerHTML = value[i];
+            document.getElementById("link").innerHTML = decodeURIComponent(value[i]);
         }
             //alert(key[i]+"="+value[i]);
         }
@@ -245,7 +245,7 @@ linkEl.attachEvent('onclick', selectLink);
 </script>
 <script>
     function allowJump() {
-        var url=window.location.search;
+        var url=decodeURIComponent(window.location.search);
         if(url.indexOf("?")!=-1)
         {
             var str = url.substr(1)
@@ -253,18 +253,18 @@ linkEl.attachEvent('onclick', selectLink);
             var key=new Array(strs.length);
             var value=new Array(strs.length);
             for(i=0;i<strs.length;i++){
-                key[i]=strs[i].split("=")[0]
-                value[i]=unescape(strs[i].split("=")[1]);
+                key[i]=decodeURIComponent(strs[i].split("=")[0]);
+                value[i]=decodeURIComponent(unescape(strs[i].split("=")[1]));
             if(key[i] == "url"){
                 //alert(value[i]);
-                window.location.href = value[i];
+                window.location.href = decodeURIComponent(value[i]);
             }
                 //alert(key[i]+"="+value[i]);
             }
         }
     }
     function allowJumpWindow() {
-        var url=window.location.search;
+        var url=decodeURIComponent(window.location.search);
         if(url.indexOf("?")!=-1)
         {
             var str = url.substr(1)
@@ -272,12 +272,12 @@ linkEl.attachEvent('onclick', selectLink);
             var key=new Array(strs.length);
             var value=new Array(strs.length);
             for(i=0;i<strs.length;i++){
-                key[i]=strs[i].split("=")[0]
-                value[i]=unescape(strs[i].split("=")[1]);
+                key[i]=decodeURIComponent(strs[i].split("=")[0]);
+                value[i]=decodeURIComponent(unescape(strs[i].split("=")[1]));
             if(key[i] == "url"){
                 //alert(value[i]);
                 // window.location.href = value[i];
-                window.open(value[i],'','width=800,height=500,resizable=yes');
+                window.open(decodeURIComponent(value[i]),'','width=800,height=500,resizable=yes');
                 // window.open(value[i],'','');
             }
                 //alert(key[i]+"="+value[i]);
@@ -285,7 +285,7 @@ linkEl.attachEvent('onclick', selectLink);
         }
     }
     function allowJumpNewTab() {
-        var url=window.location.search;
+        var url=decodeURIComponent(window.location.search);
         if(url.indexOf("?")!=-1)
         {
             var str = url.substr(1)
@@ -293,13 +293,14 @@ linkEl.attachEvent('onclick', selectLink);
             var key=new Array(strs.length);
             var value=new Array(strs.length);
             for(i=0;i<strs.length;i++){
-                key[i]=strs[i].split("=")[0]
-                value[i]=unescape(strs[i].split("=")[1]);
+                key[i]=decodeURIComponent(strs[i].split("=")[0]);
+                value[i]=decodeURIComponent(unescape(strs[i].split("=")[1]));
             if(key[i] == "url"){
                 //alert(value[i]);
                 // window.location.href = value[i];
-                // window.open(value[i],'','width=300,height=300,resizable=yes');
-                window.open(value[i],'','');
+                // window.open(decodeURIComponent(value[i]),'','width=800,height=500,resizable=yes');
+                window.open(decodeURIComponent(value[i]),'','');
+                // window.open(value[i],'','');
             }
                 //alert(key[i]+"="+value[i]);
             }
